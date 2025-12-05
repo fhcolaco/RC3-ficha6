@@ -8,7 +8,7 @@
 - Distâncias conhecidas: ZT1↔ZT2 = 45 m; ZT4↔ZT5 = 50 m; ZT6↔ZT7 = 65 m. Restantes ligações de campus foram estimadas a partir do esquema (ZT1↔ZT3 ≈ 110 m; ZT1↔ZT4 ≈ 160 m; ZT1↔ZT6 ≈ 220 m) para permitir o planeamento do backbone.
 - Comprimento médio da cablagem horizontal: 60 − 10·T + G = **32 m**.
 
-## Quantidade de tomadas por edifício
+## a) Quantidade de tomadas por edifício
 | Edifício | Área estimada | Densidade aplicada | Tomadas calculadas |
 | --- | --- | --- | --- |
 | Escritórios | 800 m² | Base | 160 |
@@ -19,7 +19,12 @@
 
 Total de utilizadores = metade das tomadas = **230**. Colaboradores remotos = **12** (10+G).
 
-## Distribuidores propostos
+### Sistema de identificação de tomadas
+- Padrão de etiqueta: **[Edifício]-[ZT]-R[rack]-PP[patch]-T[nº tomada]** (ex.: `ESC-ZT1-R1-PP02-T15`).
+- As tomadas de área de trabalho são numeradas sequencialmente por bastidor (Tomada 1 Bastidor 1, Tomada 2 Bastidor 1, ...); o mesmo número é replicado no patch panel correspondente.
+- Fibra e cobre seguem a mesma lógica, com cores distintas para dados/voz/videovigilância/Wi‑Fi.
+
+## b) Diagrama de rede e localização dos distribuidores
 - **ZT1 (Edifício Escritórios)**: função **CD/BD/FD**, ligação à operadora e cobertura principal do piso.
 - **ZT2 (Escritórios)**: **FD** auxiliar ligado a ZT1 por FO (45 m) para equilibrar distâncias de tomadas.
 - **ZT3 (Showroom)**: **BD/FD** ligado ao CD por FO (≈110 m).
@@ -28,7 +33,23 @@ Total de utilizadores = metade das tomadas = **230**. Colaboradores remotos = **
 - **ZT6 (Armazém)**: **BD/FD** ligado ao CD por FO (≈220 m); cobre a zona principal.
 - **ZT7 (Armazém)**: **FD** ligado a ZT6 por FO (65 m) para cobrir a zona remota.
 
-## Cablagem por subsistema
+Diagrama textual (campus estrela):
+
+```
+          [Showroom ZT3]
+                 |
+                 | FO SM 12F ≈110 m
+                 |
+[Fábrica ZT5]--FO--[Fábrica ZT4]--FO--[CD/BD/FD ZT1]--FO--[BD/FD ZT6]--FO--[FD ZT7]
+                         |                                     
+                         | FO SM 50 m                          | FO SM 65 m
+                         |                                     |
+                    (FD no edifício)                     (FD no edifício)
+```
+
+Para Wi‑Fi (exercício b), assumem-se as mesmas zonas de cobertura do edifício de Escritórios: AP colocados de forma homogénea por cada 150 m², sem reutilização entre edifícios ou pisos.
+
+## c) Cablagem por subsistema
 ### Horizontal
 | Edifício | Tipo de cabo | Tomadas | Comprimento médio | Comprimento total |
 | --- | --- | --- | --- | --- |
@@ -51,7 +72,7 @@ Total de utilizadores = metade das tomadas = **230**. Colaboradores remotos = **
 | ZT1 | ZT4 | 160 m | FO SM 12F | Fábrica. |
 | ZT1 | ZT6 | 220 m | FO SM 12F | Armazém. |
 
-## Dimensionamento de ativos por distribuidor
+## d) Dimensionamento de ativos por distribuidor
 Número de portas = utilizadores locais + câmaras + AP + servidores/roteador + 20% de margem.
 
 | Distribuidor | Base de cálculo | Portas (≥) | Proposta |
@@ -66,7 +87,7 @@ Número de portas = utilizadores locais + câmaras + AP + servidores/roteador + 
 
 Todos os distribuidores incluem UPS dimensionada para pelo menos 30 minutos.
 
-## Cálculo de fluxos de débito (base em 230 utilizadores + 12 remotos)
+## e) Cálculo de fluxos de débito (base em 230 utilizadores + 12 remotos)
 | Aplicação | Utilizadores aplicacionais | Simult. | DSN | Tráfego agregado |
 | --- | --- | --- | --- | --- |
 | E-mail | 207 (90%) | 67% | 384 kbps | 53.26 Mbps |
