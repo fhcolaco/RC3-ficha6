@@ -8,18 +8,27 @@
 - Distâncias conhecidas: ZT1↔ZT2 = 45 m; ZT4↔ZT5 = 50 m; ZT6↔ZT7 = 65 m. Restantes ligações de campus foram estimadas a partir do esquema (ZT1↔ZT3 ≈ 110 m; ZT1↔ZT4 ≈ 160 m; ZT1↔ZT6 ≈ 220 m) para permitir o planeamento do backbone.
 - Comprimento médio da cablagem horizontal: 60 − 10·T + G = **32 m**.
 
-## Quantidade de tomadas por edifício
-| Edifício | Área estimada | Densidade aplicada | Tomadas calculadas |
+## a) Quantidade de tomadas por edifício (cálculos visíveis)
+- Fórmula base: \( \text{tomadas}=\text{área}\times0{,}2\) (2 tomadas/10 m²).
+- Ajustes por edifício: Showroom ×2; Fábrica ×1/4; Armazém ×1/3; Escritórios = base.
+
+| Edifício | Área estimada | Cálculo | Tomadas calculadas |
 | --- | --- | --- | --- |
-| Escritórios | 800 m² | Base | 160 |
-| Showroom | 400 m² | 2× | 160 |
-| Fábrica | 1600 m² | 1/4× | 80 |
-| Armazém | 900 m² | 1/3× | 60 |
+| Escritórios | 800 m² | 800 × 0,2 = 160 | 160 |
+| Showroom | 400 m² | 400 × 0,2 × 2 = 160 | 160 |
+| Fábrica | 1600 m² | 1600 × 0,2 ÷ 4 = 80 | 80 |
+| Armazém | 900 m² | 900 × 0,2 ÷ 3 = 60 | 60 |
 | **Total** | — | — | **460** |
 
-Total de utilizadores = metade das tomadas = **230**. Colaboradores remotos = **12** (10+G).
+- Total de utilizadores = 460 ÷ 2 = **230**.
+- Colaboradores remotos = 10 + G = **12**.
 
-## Distribuidores propostos
+### Sistema de identificação de tomadas
+- Padrão de etiqueta: **[Edifício]-[ZT]-R[rack]-PP[patch]-T[nº tomada]** (ex.: `ESC-ZT1-R1-PP02-T15`).
+- As tomadas de área de trabalho são numeradas sequencialmente por bastidor (Tomada 1 Bastidor 1, Tomada 2 Bastidor 1, ...); o mesmo número é replicado no patch panel correspondente.
+- Fibra e cobre seguem a mesma lógica, com cores distintas para dados/voz/videovigilância/Wi‑Fi.
+
+## b) Diagrama de rede e localização dos distribuidores
 - **ZT1 (Edifício Escritórios)**: função **CD/BD/FD**, ligação à operadora e cobertura principal do piso.
 - **ZT2 (Escritórios)**: **FD** auxiliar ligado a ZT1 por FO (45 m) para equilibrar distâncias de tomadas.
 - **ZT3 (Showroom)**: **BD/FD** ligado ao CD por FO (≈110 m).
@@ -28,14 +37,30 @@ Total de utilizadores = metade das tomadas = **230**. Colaboradores remotos = **
 - **ZT6 (Armazém)**: **BD/FD** ligado ao CD por FO (≈220 m); cobre a zona principal.
 - **ZT7 (Armazém)**: **FD** ligado a ZT6 por FO (65 m) para cobrir a zona remota.
 
-## Cablagem por subsistema
+Diagrama textual (campus estrela):
+
+```
+          [Showroom ZT3]
+                 |
+                 | FO SM 12F ≈110 m
+                 |
+[Fábrica ZT5]--FO--[Fábrica ZT4]--FO--[CD/BD/FD ZT1]--FO--[BD/FD ZT6]--FO--[FD ZT7]
+                         |                                     
+                         | FO SM 50 m                          | FO SM 65 m
+                         |                                     |
+                    (FD no edifício)                     (FD no edifício)
+```
+
+Para Wi‑Fi (exercício b), assumem-se as mesmas zonas de cobertura do edifício de Escritórios: AP colocados de forma homogénea por cada 150 m², sem reutilização entre edifícios ou pisos.
+
+## c) Cablagem por subsistema
 ### Horizontal
-| Edifício | Tipo de cabo | Tomadas | Comprimento médio | Comprimento total |
-| --- | --- | --- | --- | --- |
-| Escritórios | Cat6A F/UTP | 160 | 32 m | 5120 m |
-| Showroom | Cat6A F/UTP | 160 | 32 m | 5120 m |
-| Fábrica | Cat6A **S/FTP** (EMI moderadas) | 80 | 32 m | 2560 m |
-| Armazém | Cat6A F/UTP | 60 | 32 m | 1920 m |
+| Edifício | Tipo de cabo | Tomadas | Comprimento médio | Cálculo | Comprimento total |
+| --- | --- | --- | --- | --- | --- |
+| Escritórios | Cat6A F/UTP | 160 | 32 m | 160 × 32 | 5120 m |
+| Showroom | Cat6A F/UTP | 160 | 32 m | 160 × 32 | 5120 m |
+| Fábrica | Cat6A **S/FTP** (EMI moderadas) | 80 | 32 m | 80 × 32 | 2560 m |
+| Armazém | Cat6A F/UTP | 60 | 32 m | 60 × 32 | 1920 m |
 
 ### Backbone de edifício (entre FD do mesmo edifício)
 | Ligação | Distância | Meio | Observações |
@@ -51,31 +76,31 @@ Total de utilizadores = metade das tomadas = **230**. Colaboradores remotos = **
 | ZT1 | ZT4 | 160 m | FO SM 12F | Fábrica. |
 | ZT1 | ZT6 | 220 m | FO SM 12F | Armazém. |
 
-## Dimensionamento de ativos por distribuidor
+## d) Dimensionamento de ativos por distribuidor
 Número de portas = utilizadores locais + câmaras + AP + servidores/roteador + 20% de margem.
 
-| Distribuidor | Base de cálculo | Portas (≥) | Proposta |
-| --- | --- | --- | --- |
-| ZT1 (CD/BD/FD) | 50 utilizadores + 7 câmaras + 6 AP + 1 router + 2 servidores | 78 | 2×48p POE+ (stack) |
-| ZT2 (FD) | 30 utilizadores + 0 servidores | 36 | 1×48p POE+ |
-| ZT3 (BD/FD) | 80 utilizadores + 7 câmaras + 3 AP | 108 | 2×48p POE+ + 1×24p POE+ |
-| ZT4 (BD/FD) | 24 utilizadores + 4 câmaras + 6 AP | 42 | 1×48p POE+ |
-| ZT5 (FD) | 16 utilizadores + 3 câmaras + 5 AP | 30 | 1×24p POE+ |
-| ZT6 (BD/FD) | 18 utilizadores + 3 câmaras + 4 AP | 30 | 1×24p POE+ |
-| ZT7 (FD) | 12 utilizadores + 4 câmaras + 2 AP | 22 | 1×24p POE+ |
+| Distribuidor | Base de cálculo | Margem 20% | Portas (≥) | Proposta |
+| --- | --- | --- | --- | --- |
+| ZT1 (CD/BD/FD) | 50 utilizadores + 7 câmaras + 6 AP + 1 router + 2 servidores = 66 | 66 × 1,2 = 79,2 | 80 | 2×48p POE+ (stack) |
+| ZT2 (FD) | 30 utilizadores | 30 × 1,2 = 36 | 36 | 1×48p POE+ |
+| ZT3 (BD/FD) | 80 utilizadores + 7 câmaras + 3 AP = 90 | 90 × 1,2 = 108 | 108 | 2×48p POE+ + 1×24p POE+ |
+| ZT4 (BD/FD) | 24 utilizadores + 4 câmaras + 6 AP = 34 | 34 × 1,2 = 40,8 | 42 | 1×48p POE+ |
+| ZT5 (FD) | 16 utilizadores + 3 câmaras + 5 AP = 24 | 24 × 1,2 = 28,8 | 30 | 1×24p POE+ |
+| ZT6 (BD/FD) | 18 utilizadores + 3 câmaras + 4 AP = 25 | 25 × 1,2 = 30 | 30 | 1×24p POE+ |
+| ZT7 (FD) | 12 utilizadores + 4 câmaras + 2 AP = 18 | 18 × 1,2 = 21,6 | 22 | 1×24p POE+ |
 
 Todos os distribuidores incluem UPS dimensionada para pelo menos 30 minutos.
 
-## Cálculo de fluxos de débito (base em 230 utilizadores + 12 remotos)
-| Aplicação | Utilizadores aplicacionais | Simult. | DSN | Tráfego agregado |
-| --- | --- | --- | --- | --- |
-| E-mail | 207 (90%) | 67% | 384 kbps | 53.26 Mbps |
-| Videovigilância | 28 câmaras | 100% | 2048 kbps | 57.34 Mbps |
-| Base de dados | 198 (81% + remotos) | 40% | 128 kbps | 10.11 Mbps |
-| VoIP | 69 (30%) | 20% | 32 kbps | 0.45 Mbps |
-| Impressão | 230 | 7% | 2048 kbps | 34.82 Mbps |
-| Ficheiros | 210 (86% + remotos) | 60% | 512 kbps | 64.51 Mbps |
-| **Subtotal LAN** | — | — | — | **≈220.5 Mbps** |
-| Internet | 173 (75%) | 78% | 512 kbps | **69.12 Mbps** |
+## e) Cálculo de fluxos de débito (base em 230 utilizadores + 12 remotos)
+| Aplicação | Utilizadores aplicacionais | Simult. | DSN | Cálculo | Tráfego agregado |
+| --- | --- | --- | --- | --- | --- |
+| E-mail | 90% de 230 = 207 | 67% | 384 kbps | 207 × 0,67 × 0,384 | 53,3 Mbps |
+| Videovigilância | 28 câmaras | 100% | 2048 kbps | 28 × 2,048 | 57,3 Mbps |
+| Base de dados | 81% de 230 = 186; +12 remotos = 198 | 40% | 128 kbps | 198 × 0,4 × 0,128 | 10,1 Mbps |
+| VoIP | 30% de 230 = 69 | 20% | 32 kbps | 69 × 0,2 × 0,032 | 0,45 Mbps |
+| Impressão | 230 | 7% | 2048 kbps | 230 × 0,07 × 2,048 | 33,0 Mbps |
+| Ficheiros | 86% de 230 = 198; +12 remotos = 210 | 60% | 512 kbps | 210 × 0,6 × 0,512 | 64,5 Mbps |
+| **Subtotal LAN** | — | — | — | — | **≈218,7 Mbps** |
+| Internet | 75% de 230 = 173 | 78% | 512 kbps | 173 × 0,78 × 0,512 | **≈69,2 Mbps** |
 
 Servidor/localização (T+G=5): E-mail/VoIP/Ficheiros/Videovigilância em **Cloud**; Base de dados e Impressão em **ZT1 (CD)**.
