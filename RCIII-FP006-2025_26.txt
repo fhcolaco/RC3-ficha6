@@ -1,0 +1,285 @@
+ ESCOLA SUPERIOR DE TECNOLOGIA E GESTÃO DE VISEU  
+REDES DE COMUNICAÇÃO II I 
+Ano Letivo 202 5/2026 Pag. 1/7 
+ 
+Ficha Prática 6  
+ PROJE TO DE CABLAGEM ESTRUTURADA  
+ 
+RCIII 202 5/202 6 
+ 
+1. Introdução  
+O conceito de cablagem estruturada está associado à necessidade de planear os sistemas de cablagem de 
+dados de forma assegurar a sua longevidade . Para isso é necessário que sejam genéricos e flexíveis de 
+forma a assegurar que serão capazes de acompanhar a evolução técnica dos equipamentos ativos e a 
+evolução de todo o sistema de comunicações ao qual serve de suporte base. A cablagem estruturada deve 
+integrar todos os sistemas de comunicação, não deve contemplar apenas a transmissão de dados, mas 
+também os c ircuitos de voz (ligações telefónicas).  
+A instalação de cablagens é um processo dispendioso, quer em mão de obra, quer sob o ponto de vista 
+da perturbação geral causada. De preferência as cablagens são instaladas na fase final de construção dos 
+edifícios, ou em remodelações profundas.  
+O ideal é que o sistema de cabos seja capaz de prolongar a sua vida para além da dos equipamentos 
+ativos, permitindo a evolução técnica destes sem necessidade de substituição das cablagens. O sistema 
+de cablagens não deve ser projetado para as necessidades  do equipamento ativo a colocar. É necessário 
+ver mais além, quer em termos tecnológicos quer em termos das necessidades do cliente.  
+Sendo um sistema que se destina a ser reutilizado em evoluções futuras dos sistemas de comunicação é 
+fundamentar seguir normas e documentar da melhor forma possível todo o sistema de cablagens.  
+ 
+1.1. Objetivos : Aplicar os conhecimentos das aulas teóricas no projeto de uma cablagem 
+estruturada;  
+ 
+A matéria relevante para este trabalho pode ser encontrada nos seguintes capítulos  das aulas teóricas : 
+• Capítulo 4  
+• Capítulo 8  
+• Capítulo 9  
+ 
+1.1.Regras Gerais  do trabalho a submeter  
+O trabalho deverá ser documentado com a resposta às questões colocadas, bem como comentários aos 
+resultados obtidos em cada um dos passos executados. Devem também ser referenciados todos os 
+problemas encontrados e a forma como foram resolvidos.  
+Este trabalho é para ser executado em três aulas. Após o final da terceira  aula, na data  limite a ser 
+comunicada, deve submeter no Moodle as respostas a todas as questões que fazem parte desta ficha de 
+trabalho.  
+Apenas serão considerados os trabalhos entregues via plataforma do moodle, com identificação dos 
+elementos do grupo, do número de Turno e de Grupo.  
+ 
+NOTA:  As letras T e G referem -se especificamente ao número do turno e ao número atribuído ao grupo no turno e 
+deverão ser substituídas em todos os locais onde forem referidas . Para o Grupo 10, considere G=0.  
+ 
+  
+ ESCOLA SUPERIOR DE TECNOLOGIA E GESTÃO DE VISEU  
+REDES DE COMUNICAÇÃO II I 
+Ano Letivo 202 5/2026 Pag. 2/7 
+ 
+Ficha Prática 6  
+ PROJE TO DE CABLAGEM ESTRUTURADA  
+ 
+RCIII 202 5/202 6 
+ 
+2. Descrição das instalações, utilizadores e aplicações  
+ 
+Pretende -se a elaboração de um projeto completo de Rede Estruturada para a empresa ABCD que garanta 
+o correto funcionamento, fiabilidade e disponibilidade das aplicações sem  constrangimentos para os 
+utilizadores em termos de desempenho.  
+A empresa opera na área da Indústria e terá um campus empresarial a ser instalado na região de Viseu.  
+As aplicações a suportar na rede da empresa são o E -mail, Base de dados, Videovigilância , VoIP, 
+Impressão, Partilha  de Ficheiros  e o acesso à  Internet. O servidor de ficheiros deverá permitir o 
+alojamento e a partilha dos ficheiros de trabalho dos funcionários, permitindo criar pastas com acesso 
+diferenciado a diferentes  grupos de utilizadores.  
+ 
+2.1.Descrição dos edifícios:  
+ 
+a. Descrição do Campus  
+Considere o Campus desta empresa na Figura 1 . As Zonas Técnicas (ZT) são os espaços onde se podem 
+alojar os Distribuidores. As  medidas indicadas representam a distância entre as zonas técnicas  referidas.  
+ 
+ 
+Figura 1 - Campus da empresa ABCD  
+ Notas:  
+• As distâncias indicadas são entre as zonas técnicas referidas.  
+• Não há outras ligações possíveis entre os edifícios.  
+  
+
+ ESCOLA SUPERIOR DE TECNOLOGIA E GESTÃO DE VISEU  
+REDES DE COMUNICAÇÃO II I 
+Ano Letivo 202 5/2026 Pag. 3/7 
+ 
+Ficha Prática 6  
+ PROJE TO DE CABLAGEM ESTRUTURADA  
+ 
+RCIII 202 5/202 6 
+ 
+b. Descrição dos Edifícios  
+A planta do  Edifício de Escritórios é exibida na Figura .: 
+   
+Figura 2 – Piso 1 do Edifício de Escritórios  
+Notas importantes para o Edifício de Escritórios:  
+• Considere que as zonas técnicas e corredores não necessitam de tomadas de rede.  
+• Distância ZT1 < -> ZT2: 45mt  
+Na figura 3 está a planta d o edifício de Armazém : 
+ 
+Figura 3 – Edifício de Armazém  
+Notas importantes para o Edifício Armazém : 
+• A densidade de tomadas é de 1/3 do valor normal . 
+• Considere que as zonas técnicas não necessitam de tomadas de rede.  
+• Distância ZT6 < -> ZT7: 65m t 
+  
+
+ ESCOLA SUPERIOR DE TECNOLOGIA E GESTÃO DE VISEU  
+REDES DE COMUNICAÇÃO II I 
+Ano Letivo 202 5/2026 Pag. 4/7 
+ 
+Ficha Prática 6  
+ PROJE TO DE CABLAGEM ESTRUTURADA  
+ 
+RCIII 202 5/202 6 
+ 
+Na Figura 4 está a planta do edifício ShowRoom : 
+ 
+ 
+Figura 4 – Edifício Show Room  
+Notas importantes para o Edifício Show Room:  
+• Considere que as zonas técnicas não necessitam de tomadas de rede.  
+• A densidade de tomadas é dupla do valor normal.  
+ 
+Na Figura 5 está a planta do edifício Fábrica:  
+ 
+Figura 5 – Edifício Fábrica  
+Notas importantes para o Edifício Fábrica:  
+• Considere que as zonas técnicas não necessitam de tomadas de rede.  
+• A densidade de tomadas é um quarto  do valor normal.  
+• Distância ZT4 < -> ZT5: 50mt  
+• Neste edifício há interferência s eletromagnéticas  moderadas  provenientes de máquinas.  
+ 
+
+ ESCOLA SUPERIOR DE TECNOLOGIA E GESTÃO DE VISEU  
+REDES DE COMUNICAÇÃO II I 
+Ano Letivo 202 5/2026 Pag. 5/7 
+ 
+Ficha Prática 6  
+ PROJE TO DE CABLAGEM ESTRUTURADA  
+ 
+RCIII 202 5/202 6 
+ 
+ 
+c. Ligação ao exterior  
+O ponto de acesso ao exterior (Ligação à rede pública de comunicações) está localizado  no Edifício /ZT 
+a seguir indicado : 
+• Grupos 1 e 2 – Edifício de Escritórios , ZT1  
+• Grupos 3 e 4 – Edifício ShowRoom, ZT3  
+• Outros Grupos – Edifício Fábrica, ZT5  
+ 
+2.2.Regras Gerais : 
+ 
+• As distâncias /áreas  encontram -se assin aladas na s planta s. 
+• Serviço de Videovigilância:  
+o Existe serviço de videovigilância nas partes comuns de todo o edifício  e no exterior do 
+edifício. As câmaras fica m em locais onde não existe tomada de energia elétrica.  
+o Considere que, em cada edifício teremos 4 câmaras exteriores e 3 câmaras interiores.  
+o As câmaras ligam -se a tomadas disponíveis  no cálculo da quantidade de tomadas pela 
+regra da Cablagem Estruturada , ou seja, não necessita m de adicionar as tomadas das 
+câmaras aos cálculos que fizer em. 
+• Rede Sem fios:  
+o Pretende -se uma rede sem fios com débito mínimo de 500Mbps , que garanta a cobertura 
+de todos os edifícios.  
+o Considere que necessita de um Access Point (AP) por cada 150 mts quadrados e que 
+um AP não consegue cobrir um edifício vizinho  ou outro Piso .  
+o Os AP ficam  em locais onde não existe tomada de energia elétrica.   
+o Os AP ligam -se a tomadas consideradas no cálculo da quantidade de tomadas pela regra 
+da Cablagem Estruturada , ou seja, não necessita de adicionar as tomadas dos AP aos 
+cálculos que fizer.  
+• O edifício já está devidamente equipado com energia elétrica e todos os trabalhos vão decorrer 
+sem a presença dos funcionários ou mobiliário;  
+• Não existem restrições às tecnologias a implementar pois o edifício não é histórico ; 
+• Tem de considerar sistema de alimentação socorrida  (UPS) em todos os distribuidores  para 
+prevenir os casos  de falha de energia . 
+• Ligação à Internet:  
+o A empresa terá ligação à Internet  cujo Router do operador fica na Zona Técnica de 
+Ligação ao Exterior .  
+o Considere que o operador lhe entrega o serviço numa interface RJ45  GE. 
+o Deverá ser escolhida a ligação mais económica com débito mais aproximado à 
+necessidade que resulte do cálculo dos débitos agregados; consulte os sites dos 
+operadores (MEO, NOS , Vodafone , DIGI,…)  para obter orçamento.  
+ 
+2.3.Dados para o cálculo de fluxos : 
+• Considere que todos os edifícios são uma única  LAN ; 
+• O número total de utilizadores  na LAN  será metade do valor calculado para o total de tomadas  
+da rede . A somar a estes , há ainda (10 +G) colaboradores em trabalho remoto que consultam o 
+E-mail, a Base de Dados e o servidor de ficheiros.  
+ ESCOLA SUPERIOR DE TECNOLOGIA E GESTÃO DE VISEU  
+REDES DE COMUNICAÇÃO II I 
+Ano Letivo 202 5/2026 Pag. 6/7 
+ 
+Ficha Prática 6  
+ PROJE TO DE CABLAGEM ESTRUTURADA  
+ 
+RCIII 202 5/202 6 
+ 
+• Na tabela 1 encontra a percentagem d o número total de utilizadores que têm acesso a cada 
+aplicação, a sua simultaneidade  assim como o Débito em situação Normal/Nominal das 
+aplicações : 
+ 
+Aplicação  Utilizadores  aplicacionais  Simultaneidade  DSN  
+E-mail  (100-5*G)% do total  de utilizadores  (70-T) % 384 Kbps  
+Videovigilância  Igual ao número de câmaras  100%  2048 Kbps  
+Base de dados  (85-2*G)% do total  + (remotos  se aplicável)  40 %  128 kbps  
+VoIP  (60–10xT)% do total  de utilizadores  20 %  32 Kbps  
+Impressão  Todos  (10-T) % 2048 Kbps  
+Ficheiros  (100-7*G)% do total  + (remotos  se aplicável)  60 %  512 Kbps  
+Internet  75% do total  dos utilizadores  (80-G) %  512 kbps  
+ 
+Tabela 1 – Dados para cálculo de Fluxos  
+• Os servidores aplicacionais  ou sistema de alojamento das imagens de videovigilância  estão 
+alojados nas seguintes localizações  (Tabela 2) . Considere que ficam no distribuidor CD.  
+ 
+ Grupos com  
+T+G= 2, 3 ou 4  Grupos com 
+T+G= 5 ou 6  Grupos com 
+T+G=7  ou 8 Grupos com  
+T+G=9  ou 
+superior  
+E-mail  Cloud  Cloud  Cloud  Cloud  
+Videovigilância  Empresa  Cloud  Empresa  Cloud  
+Base de dados  Empresa  Empresa  Cloud  Cloud  
+VoIP  Cloud  Cloud  Cloud  Cloud  
+Impressão  Empresa  Empresa  Empresa  Empresa  
+Ficheiros  Empresa  Cloud  Empresa  Cloud  
+ 
+Tabela 2 – Localização dos servidores aplicacionais  
+3.  Documentos a entregar no moodle : 
+ 
+1. Um documento, com o nome “ TP6_ Planeamento_GrupoTG”,  que inclua:  
+a. Os cálculos da quantidade  de tomadas em cada edifício;   
+b. O diagrama de rede que indique a localização e tipo de cada distribuidor;  
+c. O cálculo de comprimentos e tipos de cablagem em cada subsistema;  para os 
+cálculos de cablagem  no subsistema horizontal , deverá considerar que, em média, 
+as tomadas estão a (60 -10*T+G) metros do respetivo distribuidor . 
+d. O dimensionamento dos equipamentos ativos a colocar em cada distribuidor . Para 
+determinar a quantidade e tipo de portas,  não considere o número de tomadas,  mas 
+sim o número de utilizadores  (ver a regra em 2. 3) + servidores + AP Wifi + câmaras 
+de videovigilância  + Router acrescida de uma margem de 20% ; 
+e. Os cálculos dos fluxos de débitos na LAN ( considere que todos os edifícios são a 
+mesma LAN ) e do acesso à Internet; deverá realizar os cálculos de fluxos de débito 
+em função do número de utilizadores e não em função do número de tomadas.  
+ 
+ 
+ ESCOLA SUPERIOR DE TECNOLOGIA E GESTÃO DE VISEU  
+REDES DE COMUNICAÇÃO II I 
+Ano Letivo 202 5/2026 Pag. 7/7 
+ 
+Ficha Prática 6  
+ PROJE TO DE CABLAGEM ESTRUTURADA  
+ 
+RCIII 202 5/202 6 
+ 
+ 
+2. Um documento de Projeto de Cablagem Estruturada, com nome 
+“TP6_ Projeto_GrupoTG”  com o seguinte conjunto de informação:  
+• Esquema geral da arquitetura lógica ; 
+• O dimensionamento e escolha de  equipame ntos passivos em cada  distribuidor;  
+• O dimensionamento e escolha dos  equipamentos ativos  em cada distribuidor;  
+• Elaborar um esquema para identificar os Distribuidore s; 
+• Desenhe o esquema de colocação  dos equipamentos  ativos  e passivos  em cada bastidor;  
+• Apenas para o edifício do Armazém , desenhar na planta os Traçados da cablagem e 
+localização das tomadas e bastidor ; 
+• Descreva como poderia implementar o seguinte serviço  (indicar o tipo de servidor, a 
+aplicação, etc. ): 
+o Grupos pares: Serviço de partilha de Ficheiros  
+o Grupos ímpares: Serviço VoIP  
+• Orçamento: de modo que  o cliente possa ter uma ideia de quais os valores envolvidos na 
+implementação do projeto de rede . Deverá elaborar uma tabela na qual deverão constar os 
+diversos equipamentos e acessórios, quantidades, custo unitário e custo total. Para o cálculo 
+do orçamento, não se esqueça de incluir:  
+ 
+i. Os bastidores, com as réguas de alimentação elétrica , as réguas  e as guias de cabos  
+necessárias para terminar todas as tomadas calculadas;  
+ii. Alimentação socorrida (UPS) em cada bastidor ; 
+iii. A cablagem, incluindo as calhas técnicas;  
+iv. As tomadas;  
+v. Dois chicotes por utilizador  (um para a área de trabalho, outro no lado do bastidor);  
+vi. Os equipamentos ativos: switchs, router, Access Point Wifi  e câmaras de 
+videovigilância ; 
+vii. Não é necessário cotar PC , servidores  ou impressoras.  
+Deve pesquisar o custo dos diversos equipamentos e acessórios necessários para implementar o projeto. 
+Exemplo s: https://chip7.pt/ , https://www.castroelectronica.pt , http://lidertronica.com ,  
+https://www.aquario.pt   ou.  Terá de indicar no documento quais os sites que utilizou.  
+ 
