@@ -91,16 +91,27 @@ Número de portas = utilizadores locais + câmaras + AP + servidores/roteador + 
 
 Todos os distribuidores incluem UPS dimensionada para pelo menos 30 minutos.
 
-## e) Cálculo de fluxos de débito (base em 230 utilizadores + 12 remotos)
+## e) Cálculo de fluxos de débito (230 utilizadores presenciais + 12 remotos)
+Servidores/localização para T+G=5 (coluna **Grupos com T+G=5 ou 6** do enunciado):
+- **Cloud**: E-mail, Videovigilância, VoIP, Ficheiros.
+- **On-prem (ZT1/CD)**: Base de dados e Impressão.
+
+### Tabela 1 — Tráfego **LAN** (aplicações com servidor na empresa)
 | Aplicação | Utilizadores aplicacionais | Simult. | DSN | Cálculo | Tráfego agregado |
 | --- | --- | --- | --- | --- | --- |
-| E-mail | 90% de 230 = 207 | 67% | 384 kbps | 207 × 0,67 × 0,384 | 53,3 Mbps |
-| Videovigilância | 28 câmaras | 100% | 2048 kbps | 28 × 2,048 | 57,3 Mbps |
-| Base de dados | 81% de 230 = 186; +12 remotos = 198 | 40% | 128 kbps | 198 × 0,4 × 0,128 | 10,1 Mbps |
-| VoIP | 30% de 230 = 69 | 20% | 32 kbps | 69 × 0,2 × 0,032 | 0,45 Mbps |
-| Impressão | 230 | 7% | 2048 kbps | 230 × 0,07 × 2,048 | 33,0 Mbps |
-| Ficheiros | 86% de 230 = 198; +12 remotos = 210 | 60% | 512 kbps | 210 × 0,6 × 0,512 | 64,5 Mbps |
-| **Subtotal LAN** | — | — | — | — | **≈218,7 Mbps** |
-| Internet | 75% de 230 = 173 | 78% | 512 kbps | 173 × 0,78 × 0,512 | **≈69,2 Mbps** |
+| Base de dados (locais) | 81% de 230 = 186 | 40% | 128 kbps | 186 × 0,4 × 0,128 | **9,5 Mbps** |
+| Impressão | 230 | 7% | 2048 kbps | 230 × 0,07 × 2,048 | **33,0 Mbps** |
+| **Subtotal LAN (interno)** | — | — | — | — | **≈42,5 Mbps** |
 
-Servidor/localização (T+G=5): E-mail/VoIP/Ficheiros/Videovigilância em **Cloud**; Base de dados e Impressão em **ZT1 (CD)**.
+### Tabela 2 — Tráfego **Internet** (aplicações em cloud + remotos)
+| Aplicação | Utilizadores aplicacionais | Simult. | DSN | Cálculo | Tráfego agregado |
+| --- | --- | --- | --- | --- | --- |
+| E-mail (cloud) | 90% de 230 = 207 **+12 remotos** = 219 | 67% | 384 kbps | 219 × 0,67 × 0,384 | **56,4 Mbps** |
+| Videovigilância (cloud) | 28 câmaras | 100% | 2048 kbps | 28 × 2,048 | **57,3 Mbps** |
+| Base de dados (remotos) | 12 remotos | 40% | 128 kbps | 12 × 0,4 × 0,128 | **0,61 Mbps** |
+| VoIP (cloud) | 30% de 230 = 69 | 20% | 32 kbps | 69 × 0,2 × 0,032 | **0,44 Mbps** |
+| Ficheiros (cloud) | 86% de 230 = 198 **+12 remotos** = 210 | 60% | 512 kbps | 210 × 0,6 × 0,512 | **64,5 Mbps** |
+| Internet (navegação) | 75% de 230 = 173 | 78% | 512 kbps | 173 × 0,78 × 0,512 | **69,1 Mbps** |
+| **Subtotal Internet** | — | — | — | — | **≈248 Mbps** |
+
+Observação: Ao separar LAN (servidores internos) de Internet (cloud + remotos), evidencia-se a necessidade de largura de banda externa significativamente superior à interna, respondendo às cargas de 230 utilizadores presenciais + 12 remotos.
