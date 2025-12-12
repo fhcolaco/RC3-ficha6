@@ -117,7 +117,3 @@ U10-1: Guias verticais/horizontais
 | Contingência técnica 10% | — | — | 7.730 | — |
 | **Total estimado** | — | — | **91.032 €** | — |
 
-Notas:
-- Preços pesquisados nas lojas indicadas (URLs na tabela) em valores de retalho à data da elaboração; substitua por cotações formais para compra em volume.
-- Contingência cobre variações cambiais, cabos adicionais para rotas alternativas e imprevistos de obra.
-- A mão-de-obra está dimensionada para um projeto real: lançamento, terminação, certificação, etiquetagem completa e coordenação em obra.
