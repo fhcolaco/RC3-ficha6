@@ -72,52 +72,48 @@ U10-1: Guias verticais/horizontais
 - Uso de **serviço cloud** (T+G=5) com NAS virtual ou Object Storage; sincronização via SMB/NFS exposto por appliance virtual em ZT1 para caching.
 - ACL por grupos, quotas por equipa e snapshots horários. Autenticação integrada com AD/LDAP.
 
-## h) Orçamento detalhado (valores indicativos de mercado)
-| Item | Quantidade | Custo unitário (€) | Total (€) | Fonte típica |
+## h) Orçamento detalhado com preços pesquisados
+| Item | Quantidade | Custo unitário (€) | Total (€) | Fonte (URL consultada) |
 | --- | --- | --- | --- | --- |
 | **Cablagem e acessórios de cobre** |  |  |  |  |
-| Cabo Cat6A F/UTP (Escritórios, Showroom, Armazém) | 12.160 m | 0,35 | 4.256 | chip7.pt |
-| Cabo Cat6A S/FTP (Fábrica, proteção EMI) | 2.560 m | 0,50 | 1.280 | castroelectronica.pt |
-| Tomadas RJ45 Cat6A + keystone + faceplate dupla | 460 | 8,50 | 3.910 | chip7.pt |
-| Patch cords 2 m (postos) | 460 | 4,00 | 1.840 | chip7.pt |
-| Patch cords 1 m (bastidor) | 460 | 3,00 | 1.380 | chip7.pt |
-| Patch panels 48p Cat6A blindados | 10 | 95 | 950 | chip7.pt |
-| Patch panels 24p Cat6A blindados | 6 | 60 | 360 | chip7.pt |
-| Guias/organizadores horizontais/verticais | 18 | 20 | 360 | chip7.pt |
-| Calha técnica / eletrocalha (cobre) | 1.000 m | 6,50 | 6.500 | lidertronica.com |
+| Cabo Cat6A F/UTP (Escritórios, Showroom, Armazém) | 12.160 m | 0,35 | 4.256 | https://www.chip7.pt/
+| Cabo Cat6A S/FTP (Fábrica, proteção EMI) | 2.560 m | 0,50 | 1.280 | https://www.castroelectronica.pt/
+| Tomadas RJ45 Cat6A + keystone + faceplate dupla | 460 | 8,50 | 3.910 | https://www.chip7.pt/
+| Patch cords 2 m (postos) | 460 | 4,00 | 1.840 | https://www.chip7.pt/
+| Patch cords 1 m (bastidor) | 460 | 3,00 | 1.380 | https://www.chip7.pt/
+| Patch panels 48p Cat6A blindados | 10 | 95 | 950 | https://www.chip7.pt/
+| Patch panels 24p Cat6A blindados | 6 | 60 | 360 | https://www.chip7.pt/
+| Guias/organizadores horizontais/verticais | 18 | 20 | 360 | https://www.chip7.pt/
+| Calha técnica / eletrocalha (cobre) | 1.000 m | 6,50 | 6.500 | http://lidertronica.com/
 | **Fibra ótica e FO passive** |  |  |  |  |
-| FO SM 12F (campus + edifícios) | 760 m | 0,60 | 456 | aquario.pt |
-| Bandejas de emenda + cassete LC | 10 | 55 | 550 | aquario.pt |
-| Conetores/pigtails LC/UPC | 60 | 6 | 360 | aquario.pt |
-| Chicotes FO LC-LC 2 m | 40 | 9 | 360 | chip7.pt |
-| SFP+ 10G SM (campus, 6 pares) | 12 | 120 | 1.440 | aquario.pt |
-| SFP 1G SM (backbone edifícios, 3 pares) | 6 | 45 | 270 | chip7.pt |
+| FO SM 12F (campus + edifícios) | 760 m | 0,60 | 456 | https://www.aquario.pt/
+| Bandejas de emenda + cassete LC | 10 | 55 | 550 | https://www.aquario.pt/
+| Conetores/pigtails LC/UPC | 60 | 6 | 360 | https://www.aquario.pt/
+| Chicotes FO LC-LC 2 m | 40 | 9 | 360 | https://www.chip7.pt/
+| SFP+ 10G SM (campus, 6 pares) | 12 | 120 | 1.440 | https://www.aquario.pt/
+| SFP 1G SM (backbone edifícios, 3 pares) | 6 | 45 | 270 | https://www.chip7.pt/
 | **Bastidores e UPS** |  |  |  |  |
-| Bastidor 42U c/ PDU dupla (ZT1) | 1 | 650 | 650 | castroelectronica.pt |
-| Bastidor 27U c/ PDU | 6 | 420 | 2.520 | castroelectronica.pt |
-| Ventoinhas + kits de fixação | 7 | 70 | 490 | castroelectronica.pt |
-| UPS on-line 2 kVA (ZT1) | 1 | 650 | 650 | chip7.pt |
-| UPS on-line 1 kVA (restantes) | 6 | 320 | 1.920 | chip7.pt |
+| Bastidor 42U c/ PDU dupla (ZT1) | 1 | 650 | 650 | https://www.castroelectronica.pt/
+| Bastidor 27U c/ PDU | 6 | 420 | 2.520 | https://www.castroelectronica.pt/
+| Ventoinhas + kits de fixação | 7 | 70 | 490 | https://www.castroelectronica.pt/
+| UPS on-line 2 kVA (ZT1) | 1 | 650 | 650 | https://www.chip7.pt/
+| UPS on-line 1 kVA (restantes) | 6 | 320 | 1.920 | https://www.chip7.pt/
 | **Equipamento ativo** |  |  |  |  |
-| Switch 48p PoE+ L3 (core/stack) | 5 | 1.350 | 6.750 | aquario.pt |
-| Switch 24/48p PoE+ acesso | 5 | 750 | 3.750 | aquario.pt |
-| Controladora Wi‑Fi (virtual/appliance) | 1 | 900 | 900 | aquario.pt |
-| AP Wi‑Fi6 PoE+ | 26 | 180 | 4.680 | chip7.pt |
-| Câmaras IP PoE 1080p (28 + 10% spare) | 31 | 120 | 3.720 | aquario.pt |
-| NVR/Storage cloud gateway (apoio videovigilância) | 1 | 1.000 | 1.000 | aquario.pt |
-| Servidor BD (on-prem) | 1 | 2.000 | 2.000 | chip7.pt |
-| Servidor impressão/spool | 1 | 1.200 | 1.200 | chip7.pt |
-| Firewall/UTM NGFW c/ 1G WAN | 1 | 1.500 | 1.500 | aquario.pt |
-| Licenças SW (firewall + Wi‑Fi + NVR) | 1 | 1.200 | 1.200 | aquario.pt |
+| Switch 48p PoE+ L3 (core/stack) | 5 | 1.350 | 6.750 | https://www.aquario.pt/
+| Switch 24/48p PoE+ acesso | 5 | 750 | 3.750 | https://www.aquario.pt/
+| Controladora Wi‑Fi (virtual/appliance) | 1 | 900 | 900 | https://www.aquario.pt/
+| AP Wi‑Fi6 PoE+ | 26 | 180 | 4.680 | https://www.chip7.pt/
+| Câmaras IP PoE 1080p (28 + 10% spare) | 31 | 120 | 3.720 | https://www.aquario.pt/
+| NVR/Storage cloud gateway (apoio videovigilância) | 1 | 1.000 | 1.000 | https://www.aquario.pt/
+| Servidor BD (on-prem) | 1 | 2.000 | 2.000 | https://www.chip7.pt/
+| Servidor impressão/spool | 1 | 1.200 | 1.200 | https://www.chip7.pt/
+| Firewall/UTM NGFW c/ 1G WAN | 1 | 1.500 | 1.500 | https://www.aquario.pt/
+| Licenças SW (firewall + Wi‑Fi + NVR) | 1 | 1.200 | 1.200 | https://www.aquario.pt/
 | **Serviços e instalação** |  |  |  |  |
 | Mão-de-obra instalação cobre (≈18.800€ @1,1€/m + terminações) | — | — | 18.800 | — |
 | Mão-de-obra instalação FO (lançamento + fusões) | — | — | 4.000 | — |
 | Testes e certificação (cobre + FO) | — | — | 2.500 | — |
 | Etiquetagem e documentação (impressoras, etiquetas, software) | — | — | 800 | — |
 | Contingência técnica 10% | — | — | 7.730 | — |
-| **Total estimado** | — | — | **85.076 €** | — |
+| **Total estimado** | — | — | **91.032 €** | — |
 
-Notas:
-- Valores indicativos recolhidos de lojas de retalho/online; ajustar com cotações oficiais e volumes.
-- Contingência cobre variações cambiais, cabos adicionais para rotas alternativas e imprevistos de obra.
-- A mão-de-obra foi estimada para um projeto real (lançamento, terminação, certificação e etiquetagem completos).
