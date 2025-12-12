@@ -81,13 +81,13 @@ Número de portas = utilizadores locais + câmaras + AP + servidores/roteador + 
 
 | Distribuidor | Base de cálculo | Margem 20% | Portas (≥) | Proposta |
 | --- | --- | --- | --- | --- |
-| ZT1 (BD/FD) | 73 utilizadores + 4 câmaras + 5 AP = 82 | 82 × 1,2 = 98,4 | 100 | 2×48p POE+ (stack) |
-| ZT2 (FD) | 18 utilizadores + 3 câmaras + 2 AP = 23 | 23 × 1,2 = 27,6 | 28 | 1×24p POE+ |
-| ZT3 (BD/FD) | 96 utilizadores + 7 câmaras + 4 AP = 107 | 107 × 1,2 = 128,4 | 129 | 3×48p POE+ |
-| ZT4 (FD) | 21 utilizadores + 4 câmaras + 6 AP = 31 | 31 × 1,2 = 37,2 | 38 | 1×48p POE+ |
-| ZT5 (CD/BD/FD) | 13 utilizadores + 3 câmaras + 4 AP + 1 router + 2 servidores = 23 | 23 × 1,2 = 27,6 | 28 | 1×24p POE+ |
-| ZT6 (BD/FD) | 12 utilizadores + 4 câmaras + 2 AP = 18 | 18 × 1,2 = 21,6 | 22 | 1×24p POE+ |
-| ZT7 (FD) | 8 utilizadores + 3 câmaras + 2 AP = 13 | 13 × 1,2 = 15,6 | 16 | 1×24p POE+ |
+| ZT1 (BD/FD) | 73 utilizadores + 4 câmaras + 5 AP = 82 | 82 × 1,2 = 98,4 | 100 | **3×48p PoE+ empilhados** (garante ≥144 portas úteis) |
+| ZT2 (FD) | 18 utilizadores + 3 câmaras + 2 AP = 23 | 23 × 1,2 = 27,6 | 28 | **1×48p PoE+** |
+| ZT3 (BD/FD) | 96 utilizadores + 7 câmaras + 4 AP = 107 | 107 × 1,2 = 128,4 | 129 | **3×48p PoE+** |
+| ZT4 (FD) | 21 utilizadores + 4 câmaras + 6 AP = 31 | 31 × 1,2 = 37,2 | 38 | **1×48p PoE+** |
+| ZT5 (CD/BD/FD) | 13 utilizadores + 3 câmaras + 4 AP + 1 router + 2 servidores = 23 | 23 × 1,2 = 27,6 | 28 | **1×48p PoE+ L3** (core/roteamento) |
+| ZT6 (BD/FD) | 12 utilizadores + 4 câmaras + 2 AP = 18 | 18 × 1,2 = 21,6 | 22 | **1×24p PoE+** |
+| ZT7 (FD) | 8 utilizadores + 3 câmaras + 2 AP = 13 | 13 × 1,2 = 15,6 | 16 | **1×24p PoE+** |
 
 Todos os distribuidores incluem UPS dimensionada para pelo menos 30 minutos.
 
@@ -101,7 +101,7 @@ Servidores/localização para T+G=5 (coluna **Grupos com T+G=5 ou 6** do enuncia
 | --- | --- | --- | --- | --- | --- |
 | Base de dados (locais) | 81% de 241 = 195 | 40% | 128 kbps | 195 × 0,4 × 0,128 | **10,0 Mbps** |
 | Impressão | 241 | 7% | 2048 kbps | 241 × 0,07 × 2,048 | **34,6 Mbps** |
-| **Subtotal LAN (interno)** | — | — | — | — | **≈44,6 Mbps** |
+| **Subtotal LAN (interno)** | — | — | — | — | **≈44,5 Mbps** |
 
 ### Tabela 2 — Tráfego **Internet** (aplicações em cloud + remotos)
 | Aplicação | Utilizadores aplicacionais | Simult. | DSN | Cálculo | Tráfego agregado |
@@ -110,8 +110,8 @@ Servidores/localização para T+G=5 (coluna **Grupos com T+G=5 ou 6** do enuncia
 | Videovigilância (cloud) | 28 câmaras | 100% | 2048 kbps | 28 × 2,048 | **57,3 Mbps** |
 | Base de dados (remotos) | 12 remotos | 40% | 128 kbps | 12 × 0,4 × 0,128 | **0,61 Mbps** |
 | VoIP (cloud) | 30% de 241 = 72 | 20% | 32 kbps | 72 × 0,2 × 0,032 | **0,46 Mbps** |
-| Ficheiros (cloud) | 86% de 241 = 207 **+12 remotos** = 219 | 60% | 512 kbps | 219 × 0,6 × 0,512 | **67,2 Mbps** |
-| Internet (navegação) | 75% de 241 = 181 | 78% | 512 kbps | 181 × 0,78 × 0,512 | **72,2 Mbps** |
-| **Subtotal Internet** | — | — | — | — | **≈256 Mbps** |
+| Ficheiros (cloud) | 86% de 241 = 207 **+12 remotos** = 219 | 60% | 512 kbps | 219 × 0,6 × 0,512 | **67,3 Mbps** |
+| Internet (navegação) | 75% de 241 = 181 | 78% | 512 kbps | 181 × 0,78 × 0,512 | **73,0 Mbps** |
+| **Subtotal Internet** | — | — | — | — | **≈257 Mbps** |
 
-Observação: Ao separar LAN (servidores internos) de Internet (cloud + remotos), evidencia-se a necessidade de ~256 Mbps de acesso externo para 241 utilizadores presenciais + 12 remotos.
+Observação: Ao separar LAN (servidores internos) de Internet (cloud + remotos), evidencia-se a necessidade de ~257 Mbps de acesso externo para 241 utilizadores presenciais + 12 remotos.

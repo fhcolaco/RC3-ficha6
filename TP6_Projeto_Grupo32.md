@@ -27,7 +27,7 @@ Diagrama textual (campus):
 - **Identificação de tomadas**: etiqueta **[Edifício]-[ZT]-R[rack]-PP[patch]-T[nº]** (ex.: `ESC-ZT1-R1-PP02-T15`). Numeração sequencial por bastidor: Tomada 1 Bastidor 1, Tomada 2 Bastidor 1, etc., refletida no patch panel.
 
 ## c) Dimensionamento e escolha dos equipamentos ativos em cada distribuidor
-- **Switches acesso/PoE** conforme tabela do planeamento (POE+ para AP/câmaras). Stack L3 no CD em ZT5 para routing, VRRP/HSRP e ACLs.
+- **Switches acesso/PoE** conforme tabela do planeamento (PoE+ para AP/câmaras) com **9×48p PoE+** (ZT1×3, ZT2×1, ZT3×3, ZT4×1, ZT5×1) e **2×24p PoE+** (ZT6, ZT7). Stack L3 no CD em ZT5 para routing, VRRP/HSRP e ACLs.
 - **Router de operadora** em ZT5 (porta RJ45 GE) ligado a um par de switch L3 em uplink redundante.
 - **Servidores on-prem** (ZT5): base de dados (2×GE, RAID/NAS local) e servidor de impressão/spool; restantes serviços em cloud.
 - **Wi‑Fi**: AP Wi‑Fi6 PoE+ com controlador na cloud ou virtual no stack L3. SSID corporativo e convidado com VLANs separadas; zonas de cobertura seguem o mesmo critério do edifício de Escritórios (um AP por 150 m², sem reutilização entre edifícios/pisos).
@@ -101,8 +101,8 @@ U10-1: Guias verticais/horizontais
 | UPS on-line 2 kVA (ZT1) | 1 | 650 | 650 | https://www.chip7.pt/
 | UPS on-line 1 kVA (restantes) | 6 | 320 | 1.920 | https://www.chip7.pt/
 | **Equipamento ativo** |  |  |  |  |
-| Switch 48p PoE+ L3 (core/stack) | 6 | 1.350 | 8.100 | https://www.aquario.pt/
-| Switch 24/48p PoE+ acesso | 6 | 750 | 4.500 | https://www.aquario.pt/
+| Switch 48p PoE+ (L3 nos nós core) | 9 | 1.350 | 12.150 | https://www.aquario.pt/
+| Switch 24p PoE+ acesso | 2 | 750 | 1.500 | https://www.aquario.pt/
 | Controladora Wi‑Fi (virtual/appliance) | 1 | 900 | 900 | https://www.aquario.pt/
 | AP Wi‑Fi6 PoE+ | 25 | 180 | 4.500 | https://www.chip7.pt/
 | Câmaras IP PoE 1080p (28 + 10% spare) | 31 | 120 | 3.720 | https://www.aquario.pt/
@@ -116,8 +116,8 @@ U10-1: Guias verticais/horizontais
 | Mão-de-obra instalação FO (lançamento + fusões) | — | — | 4.000 | — |
 | Testes e certificação (cobre + FO) | — | — | 2.500 | — |
 | Etiquetagem e documentação (impressoras, etiquetas, software) | — | — | 800 | — |
-| Contingência técnica 10% | — | — | 7.730 | — |
-| **Total estimado** | — | — | **≈94.300 €** | — |
+| Contingência técnica 10% | — | — | 8.767 | — |
+| **Total estimado** | — | — | **≈96.400 €** | — |
 
 Notas:
 - Preços pesquisados nas lojas indicadas (URLs na tabela) em valores de retalho à data da elaboração; substitua por cotações formais para compra em volume.
