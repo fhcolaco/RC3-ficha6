@@ -3,7 +3,7 @@
 ## Premissas usadas
 - Turno **T=3**, Grupo **G=2** (logo T+G=5 e a ligação ao exterior fica no **ZT5 da Fábrica** conforme a alínea c).
 - Áreas e distâncias lidas diretamente das figuras do enunciado:
-  - **Escritórios**: A = 300 + 2·(T·10+G) = 364 m²; B = 364 m²; C = 250 − (7·10+G) = 178 m² → total 906 m².
+  - **Escritórios**: \( (300 + 2·(10·T+G))·2 + 250 − (10·T − G)\). Para T=3, G=2 ⇒ \((300+2·32)·2 + 250 − 28) = 950\) m².
   - **Show Room**: círculo com diâmetro (20+T+G)=25 m → área π·(12,5)²=490,9 m²; descontando ZT3 (12 m²) → 478,9 m².
   - **Armazém**: retângulo (5·(T+G))×(20+T+G)=25×25=625 m²; descontando ZT6 (22 m²) e ZT7 (20 m²) → 583 m².
   - **Fábrica**: retângulo 30 m × (50−G)=30×48=1440 m²; menos ZT4 e ZT5 (6 m × 6 m cada, 72 m²) → 1368 m².
@@ -18,13 +18,13 @@
 
 | Edifício | Área útil | Cálculo | Tomadas calculadas |
 | --- | --- | --- | --- |
-| Escritórios | 906 m² | 906 × 0,2 | 181,2 → **182** |
+| Escritórios | 950 m² | 950 × 0,2 | 190,0 → **190** |
 | Showroom | 478,9 m² | 478,9 × 0,2 × 2 | 191,6 → **192** |
 | Fábrica | 1368 m² | 1368 × 0,2 ÷ 4 | 68,4 → **69** |
 | Armazém | 583 m² | 583 × 0,2 ÷ 3 | 38,9 → **39** |
-| **Total** | — | — | **482** |
+| **Total** | — | — | **490** |
 
-- Total de utilizadores = 482 ÷ 2 = **241**.
+- Total de utilizadores = 490 ÷ 2 = **245**.
 - Colaboradores remotos = 10 + G = **12**.
 
 ### Sistema de identificação de tomadas
@@ -57,7 +57,7 @@ Para Wi‑Fi (exercício b), seguem-se as zonas de cobertura definidas no edifí
 ### Horizontal
 | Edifício | Tipo de cabo | Tomadas | Comprimento médio | Cálculo | Comprimento total |
 | --- | --- | --- | --- | --- | --- |
-| Escritórios | Cat6A F/UTP | 182 | 32 m | 182 × 32 | 5824 m |
+| Escritórios | Cat6A F/UTP | 190 | 32 m | 190 × 32 | 6080 m |
 | Showroom | Cat6A F/UTP | 192 | 32 m | 192 × 32 | 6144 m |
 | Fábrica | Cat6A **S/FTP** (EMI moderadas) | 69 | 32 m | 69 × 32 | 2208 m |
 | Armazém | Cat6A F/UTP | 39 | 32 m | 39 × 32 | 1248 m |
@@ -81,8 +81,8 @@ Número de portas = utilizadores locais + câmaras + AP + servidores/roteador + 
 
 | Distribuidor | Base de cálculo | Margem 20% | Portas (≥) | Proposta |
 | --- | --- | --- | --- | --- |
-| ZT1 (BD/FD) | 73 utilizadores + 4 câmaras + 5 AP = 82 | 82 × 1,2 = 98,4 | 100 | **3×48p PoE+ empilhados** (garante ≥144 portas úteis) |
-| ZT2 (FD) | 18 utilizadores + 3 câmaras + 2 AP = 23 | 23 × 1,2 = 27,6 | 28 | **1×48p PoE+** |
+| ZT1 (BD/FD) | 76 utilizadores + 4 câmaras + 5 AP = 85 | 85 × 1,2 = 102,0 | 102 | **3×48p PoE+ empilhados** (garante ≥144 portas úteis) |
+| ZT2 (FD) | 19 utilizadores + 3 câmaras + 2 AP = 24 | 24 × 1,2 = 28,8 | 29 | **1×48p PoE+** |
 | ZT3 (BD/FD) | 96 utilizadores + 7 câmaras + 4 AP = 107 | 107 × 1,2 = 128,4 | 129 | **3×48p PoE+** |
 | ZT4 (FD) | 21 utilizadores + 4 câmaras + 6 AP = 31 | 31 × 1,2 = 37,2 | 38 | **1×48p PoE+** |
 | ZT5 (CD/BD/FD) | 13 utilizadores + 3 câmaras + 4 AP + 1 router + 2 servidores = 23 | 23 × 1,2 = 27,6 | 28 | **1×48p PoE+ L3** (core/roteamento) |
@@ -91,7 +91,7 @@ Número de portas = utilizadores locais + câmaras + AP + servidores/roteador + 
 
 Todos os distribuidores incluem UPS dimensionada para pelo menos 30 minutos.
 
-## e) Cálculo de fluxos de débito (241 utilizadores presenciais + 12 remotos)
+## e) Cálculo de fluxos de débito (245 utilizadores presenciais + 12 remotos)
 Servidores/localização para T+G=5 (coluna **Grupos com T+G=5 ou 6** do enunciado):
 - **Cloud**: E-mail, Videovigilância, VoIP, Ficheiros.
 - **On-prem (ZT5/CD)**: Base de dados e Impressão.
@@ -99,19 +99,19 @@ Servidores/localização para T+G=5 (coluna **Grupos com T+G=5 ou 6** do enuncia
 ### Tabela 1 — Tráfego **LAN** (aplicações com servidor na empresa)
 | Aplicação | Utilizadores aplicacionais | Simult. | DSN | Cálculo | Tráfego agregado |
 | --- | --- | --- | --- | --- | --- |
-| Base de dados (locais) | 81% de 241 = 195 | 40% | 128 kbps | 195 × 0,4 × 0,128 | **10,0 Mbps** |
-| Impressão | 241 | 7% | 2048 kbps | 241 × 0,07 × 2,048 | **34,6 Mbps** |
-| **Subtotal LAN (interno)** | — | — | — | — | **≈44,5 Mbps** |
+| Base de dados (locais) | 81% de 245 = 198 | 40% | 128 kbps | 198 × 0,4 × 0,128 | **10,2 Mbps** |
+| Impressão | 245 | 7% | 2048 kbps | 245 × 0,07 × 2,048 | **35,1 Mbps** |
+| **Subtotal LAN (interno)** | — | — | — | — | **≈45,3 Mbps** |
 
 ### Tabela 2 — Tráfego **Internet** (aplicações em cloud + remotos)
 | Aplicação | Utilizadores aplicacionais | Simult. | DSN | Cálculo | Tráfego agregado |
 | --- | --- | --- | --- | --- | --- |
-| E-mail (cloud) | 90% de 241 = 217 **+12 remotos** = 229 | 67% | 384 kbps | 229 × 0,67 × 0,384 | **58,9 Mbps** |
+| E-mail (cloud) | 90% de 245 = 221 **+12 remotos** = 233 | 67% | 384 kbps | 233 × 0,67 × 0,384 | **59,8 Mbps** |
 | Videovigilância (cloud) | 28 câmaras | 100% | 2048 kbps | 28 × 2,048 | **57,3 Mbps** |
 | Base de dados (remotos) | 12 remotos | 40% | 128 kbps | 12 × 0,4 × 0,128 | **0,61 Mbps** |
-| VoIP (cloud) | 30% de 241 = 72 | 20% | 32 kbps | 72 × 0,2 × 0,032 | **0,46 Mbps** |
-| Ficheiros (cloud) | 86% de 241 = 207 **+12 remotos** = 219 | 60% | 512 kbps | 219 × 0,6 × 0,512 | **67,3 Mbps** |
-| Internet (navegação) | 75% de 241 = 181 | 78% | 512 kbps | 181 × 0,78 × 0,512 | **73,0 Mbps** |
-| **Subtotal Internet** | — | — | — | — | **≈257 Mbps** |
+| VoIP (cloud) | 30% de 245 = 74 | 20% | 32 kbps | 74 × 0,2 × 0,032 | **0,47 Mbps** |
+| Ficheiros (cloud) | 86% de 245 = 211 **+12 remotos** = 223 | 60% | 512 kbps | 223 × 0,6 × 0,512 | **68,4 Mbps** |
+| Internet (navegação) | 75% de 245 = 184 | 78% | 512 kbps | 184 × 0,78 × 0,512 | **73,4 Mbps** |
+| **Subtotal Internet** | — | — | — | — | **≈260 Mbps** |
 
-Observação: Ao separar LAN (servidores internos) de Internet (cloud + remotos), evidencia-se a necessidade de ~257 Mbps de acesso externo para 241 utilizadores presenciais + 12 remotos.
+Observação: Ao separar LAN (servidores internos) de Internet (cloud + remotos), evidencia-se a necessidade de ~260 Mbps de acesso externo para 245 utilizadores presenciais + 12 remotos.

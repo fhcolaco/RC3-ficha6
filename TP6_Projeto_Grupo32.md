@@ -78,11 +78,11 @@ U10-1: Guias verticais/horizontais
 | Item | Quantidade | Custo unitário (€) | Total (€) | Fonte (URL consultada) |
 | --- | --- | --- | --- | --- |
 | **Cablagem e acessórios de cobre** |  |  |  |  |
-| Cabo Cat6A F/UTP (Escritórios, Showroom, Armazém) | 13.216 m | 0,35 | 4.626 | https://www.chip7.pt/
+| Cabo Cat6A F/UTP (Escritórios, Showroom, Armazém) | 13.472 m | 0,35 | 4.715 | https://www.chip7.pt/
 | Cabo Cat6A S/FTP (Fábrica, proteção EMI) | 2.208 m | 0,50 | 1.104 | https://www.castroelectronica.pt/
-| Tomadas RJ45 Cat6A + keystone + faceplate dupla | 482 | 8,50 | 4.097 | https://www.chip7.pt/
-| Patch cords 2 m (postos) | 482 | 4,00 | 1.928 | https://www.chip7.pt/
-| Patch cords 1 m (bastidor) | 482 | 3,00 | 1.446 | https://www.chip7.pt/
+| Tomadas RJ45 Cat6A + keystone + faceplate dupla | 490 | 8,50 | 4.165 | https://www.chip7.pt/
+| Patch cords 2 m (postos) | 490 | 4,00 | 1.960 | https://www.chip7.pt/
+| Patch cords 1 m (bastidor) | 490 | 3,00 | 1.470 | https://www.chip7.pt/
 | Patch panels 48p Cat6A blindados | 11 | 95 | 1.045 | https://www.chip7.pt/
 | Patch panels 24p Cat6A blindados | 6 | 60 | 360 | https://www.chip7.pt/
 | Guias/organizadores horizontais/verticais | 18 | 20 | 360 | https://www.chip7.pt/
@@ -116,8 +116,8 @@ U10-1: Guias verticais/horizontais
 | Mão-de-obra instalação FO (lançamento + fusões) | — | — | 4.000 | — |
 | Testes e certificação (cobre + FO) | — | — | 2.500 | — |
 | Etiquetagem e documentação (impressoras, etiquetas, software) | — | — | 800 | — |
-| Contingência técnica 10% | — | — | 8.767 | — |
-| **Total estimado** | — | — | **≈96.400 €** | — |
+| Contingência técnica 10% | — | — | 8.788 | — |
+| **Total estimado** | — | — | **≈96.700 €** | — |
 
 Notas:
 - Preços pesquisados nas lojas indicadas (URLs na tabela) em valores de retalho à data da elaboração; substitua por cotações formais para compra em volume.
