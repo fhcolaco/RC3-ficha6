@@ -26,10 +26,10 @@ Diagrama textual (campus):
 - **Identificação de tomadas**: etiqueta **[Edifício]-[ZT]-R[rack]-PP[patch]-T[nº]** (ex.: `ESC-ZT1-R1-PP02-T15`). Numeração sequencial por bastidor: Tomada 1 Bastidor 1, Tomada 2 Bastidor 1, etc., refletida no patch panel.
 
 ## c) Dimensionamento e escolha dos equipamentos ativos em cada distribuidor
-- **Switches acesso/PoE** conforme o planeamento recalculado: **9×48p PoE+** (ZT1×3, ZT2×1, ZT3×3, ZT4×1, ZT5×1) e **2×24p PoE+** (ZT6, ZT7). Stack L3 no CD em ZT5 para routing, VRRP/HSRP e ACLs.
+- **Switches acesso/PoE** conforme o planeamento recalculado: **8×48p PoE+** (ZT1×3, ZT2×1, ZT3×2, ZT4×1, ZT5×1) e **2×24p PoE+** (ZT6, ZT7). Stack L3 no CD em ZT5 para routing, VRRP/HSRP e ACLs.
 - **Router de operadora** em ZT5 (porta RJ45 GE) ligado a um par de switch L3 em uplink redundante.
 - **Servidores on-prem** (ZT5): base de dados (2×GE, RAID/NAS local) e servidor de impressão/spool; restantes serviços em cloud.
-- **Wi‑Fi**: 24 AP Wi‑Fi6 PoE+ (7 Escritórios, 3 Showroom, 10 Fábrica, 4 Armazém), controlador virtual/cloud. SSID corporativo e convidado com VLANs separadas.
+- **Wi‑Fi**: 23 AP Wi‑Fi6 PoE+ (7 Escritórios, 3 Showroom, 9 Fábrica, 4 Armazém), controlador virtual/cloud. SSID corporativo e convidado com VLANs separadas.
 - **Videovigilância**: 28 câmaras PoE 1080p H.264 ligadas às portas de acesso; gravação no serviço cloud (conforme T+G=5).
 
 ## d) Esquema de identificação dos distribuidores
@@ -76,18 +76,17 @@ U10-1: Guias verticais/horizontais
 | Item | Quantidade | Custo unitário (€) | Total (€) | Fonte (URL consultada) |
 | --- | --- | --- | --- | --- |
 | **Cablagem e acessórios de cobre** |  |  |  |  |
-| Cabo Cat6A F/UTP (Escritórios, Showroom, Armazém) | 12.608 m | 0,35 | 4.413 | https://www.chip7.pt/ |
-| Cabo Cat6A S/FTP (Fábrica, proteção EMI) | 2.208 m | 0,50 | 1.104 | https://www.castroelectronica.pt/ |
-| Tomadas RJ45 Cat6A + keystone + faceplate dupla | 463 | 8,50 | 3.936 | https://www.chip7.pt/ |
-| Patch cords 2 m (postos) | 463 | 4,00 | 1.852 | https://www.chip7.pt/ |
-| Patch cords 1 m (bastidor) | 463 | 3,00 | 1.389 | https://www.chip7.pt/ |
-| Patch panels 48p Cat6A blindados | 10 | 95 | 950 | https://www.chip7.pt/ |
-| Patch panels 24p Cat6A blindados | 2 | 60 | 120 | https://www.chip7.pt/ |
-| Guias/organizadores horizontais/verticais | 16 | 20 | 320 | https://www.chip7.pt/ |
-| Calha técnica / eletrocalha (cobre) | 1.100 m | 6,50 | 7.150 | http://lidertronica.com/ |
+| Cabo Cat6A F/UTP (Escritórios, Showroom, Armazém) | 11.456 m | 0,35 | 4.010 | https://www.chip7.pt/ |
+| Cabo Cat6A S/FTP (Fábrica, proteção EMI) | 2.176 m | 0,50 | 1.088 | https://www.castroelectronica.pt/ |
+| Tomadas RJ45 Cat6A + keystone + faceplate dupla | 426 | 8,50 | 3.621 | https://www.chip7.pt/ |
+| Patch cords 2 m (postos) | 426 | 4,00 | 1.704 | https://www.chip7.pt/ |
+| Patch cords 1 m (bastidor) | 426 | 3,00 | 1.278 | https://www.chip7.pt/ |
+| Patch panels 48p Cat6A blindados | 9 | 95 | 855 | https://www.chip7.pt/ |
+| Guias/organizadores horizontais/verticais | 14 | 20 | 280 | https://www.chip7.pt/ |
+| Calha técnica / eletrocalha (cobre) | 1.000 m | 6,50 | 6.500 | http://lidertronica.com/ |
 | **Fibra ótica e FO passive** |  |  |  |  |
-| FO SM 12F (campus + edifícios) | 950 m | 0,60 | 570 | https://www.aquario.pt/ |
-| Bandejas de emenda + cassete LC | 10 | 55 | 550 | https://www.aquario.pt/ |
+| FO SM 12F (campus + edifícios) | 800 m | 0,60 | 480 | https://www.aquario.pt/ |
+| Bandejas de emenda + cassete LC | 8 | 55 | 440 | https://www.aquario.pt/ |
 | Conetores/pigtails LC/UPC | 60 | 6 | 360 | https://www.aquario.pt/ |
 | Chicotes FO LC-LC 2 m | 40 | 9 | 360 | https://www.chip7.pt/ |
 | SFP+ 10G SM (campus, 6 pares) | 12 | 120 | 1.440 | https://www.aquario.pt/ |
@@ -99,10 +98,10 @@ U10-1: Guias verticais/horizontais
 | UPS on-line 2 kVA (ZT1) | 1 | 650 | 650 | https://www.chip7.pt/ |
 | UPS on-line 1 kVA (restantes) | 6 | 320 | 1.920 | https://www.chip7.pt/ |
 | **Equipamento ativo** |  |  |  |  |
-| Switch 48p PoE+ (L3 nos nós core) | 9 | 1.350 | 12.150 | https://www.aquario.pt/ |
+| Switch 48p PoE+ (L3 nos nós core) | 8 | 1.350 | 10.800 | https://www.aquario.pt/ |
 | Switch 24p PoE+ acesso | 2 | 750 | 1.500 | https://www.aquario.pt/ |
 | Controladora Wi‑Fi (virtual/appliance) | 1 | 900 | 900 | https://www.aquario.pt/ |
-| AP Wi‑Fi6 PoE+ | 24 | 180 | 4.320 | https://www.chip7.pt/ |
+| AP Wi‑Fi6 PoE+ | 23 | 180 | 4.140 | https://www.chip7.pt/ |
 | Câmaras IP PoE 1080p (28 + 10% spare) | 31 | 120 | 3.720 | https://www.aquario.pt/ |
 | NVR/Storage cloud gateway (apoio videovigilância) | 1 | 1.000 | 1.000 | https://www.aquario.pt/ |
 | Servidor BD (on-prem) | 1 | 2.000 | 2.000 | https://www.chip7.pt/ |
@@ -110,12 +109,12 @@ U10-1: Guias verticais/horizontais
 | Firewall/UTM NGFW c/ 1G WAN | 1 | 1.500 | 1.500 | https://www.aquario.pt/ |
 | Licenças SW (firewall + Wi‑Fi + NVR) | 1 | 1.200 | 1.200 | https://www.aquario.pt/ |
 | **Serviços e instalação** |  |  |  |  |
-| Mão-de-obra instalação cobre (≈18.800€ @1,1€/m + terminações) | — | — | 18.800 | — |
+| Mão-de-obra instalação cobre (≈15.000€ @1,1€/m + terminações) | — | — | 15.000 | — |
 | Mão-de-obra instalação FO (lançamento + fusões) | — | — | 4.000 | — |
 | Testes e certificação (cobre + FO) | — | — | 2.500 | — |
 | Etiquetagem e documentação (impressoras, etiquetas, software) | — | — | 800 | — |
-| Contingência técnica 10% | — | — | 8.660 | — |
-| **Total estimado** | — | — | **≈95.300 €** | — |
+| Contingência técnica 10% | — | — | 7.918 | — |
+| **Total estimado** | — | — | **≈87.100 €** | — |
 
 Notas:
 - Preços pesquisados nas lojas indicadas (URLs na tabela) em valores de retalho à data da elaboração; substitua por cotações formais para compra em volume.
