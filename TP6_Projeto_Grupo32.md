@@ -109,14 +109,15 @@ U10-1: Guias verticais/horizontais
 | Firewall/UTM NGFW c/ 1G WAN | 1 | 1.500 | 1.500 | https://www.aquario.pt/ |
 | Licenças SW (firewall + Wi‑Fi + NVR) | 1 | 1.200 | 1.200 | https://www.aquario.pt/ |
 | **Serviços e instalação** |  |  |  |  |
-| Mão-de-obra instalação cobre (≈15.000€ @1,1€/m + terminações) | — | — | 15.000 | — |
-| Mão-de-obra instalação FO (lançamento + fusões) | — | — | 4.000 | — |
-| Testes e certificação (cobre + FO) | — | — | 2.500 | — |
-| Etiquetagem e documentação (impressoras, etiquetas, software) | — | — | 800 | — |
+| Mão-de-obra instalação cobre (≈15.000€ @1,1€/m + terminações) | — | — | 15.000 | Serviço interno |
+| Mão-de-obra instalação FO (lançamento + fusões) | — | — | 4.000 | Serviço interno |
+| Testes e certificação (cobre + FO) | — | — | 2.500 | Serviço interno |
+| Etiquetagem e documentação (impressoras, etiquetas, software) | — | — | 800 | Serviço interno |
 | Contingência técnica 10% | — | — | 7.918 | — |
 | **Total estimado** | — | — | **≈87.100 €** | — |
 
 Notas:
 - Preços pesquisados nas lojas indicadas (URLs na tabela) em valores de retalho à data da elaboração; substitua por cotações formais para compra em volume.
+- Lojas consultadas: https://chip7.pt/, https://www.castroelectronica.pt, http://lidertronica.com, https://www.aquario.pt.
 - Contingência cobre variações cambiais, cabos adicionais para rotas alternativas e imprevistos de obra.
 - A mão-de-obra está dimensionada para um projeto real: lançamento, terminação, certificação, etiquetagem completa e coordenação em obra.
